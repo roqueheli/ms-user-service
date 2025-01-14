@@ -20,7 +20,8 @@ import { UsersModule } from './users/users.module';
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_DATABASE'),
         entities: [__dirname + '/**/*.entity{.ts,.js}'],
-        synchronize: configService.get('NODE_ENV') !== 'production', // Solo para desarrollo
+        synchronize: process.env.DB_SYNC === 'true', // Sincroniza la base de datos (solo para desarrollo)
+        autoLoadEntities: true, // Carga automáticamente las entidades registradas
       }),
       inject: [ConfigService],
     }),
