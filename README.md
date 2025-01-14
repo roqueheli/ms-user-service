@@ -68,10 +68,13 @@ The `ms-user-service` is a microservice designed to handle user-related operatio
    GITHUB_CLIENT_SECRET=your_github_client_secret
    NODE_ENV=development
    ```
-
-4. Run the service:
+4. Run the command:
    ```bash
-   npm start
+   psql -U postgres -f create_database.sql
+   ```
+5. Run the service:
+   ```bash
+   npm start:dev
    ```
 
 ---
